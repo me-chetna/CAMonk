@@ -1,9 +1,15 @@
 import { useBlogs } from "../hooks/UseBlogs" //custom hook to fetch blogs
 import { Card, CardContent } from "../components/ui/card" //shadcn library card component
 import { Badge } from "../components/ui/badge" //shadcn library badge component
+import {cn} from "../lib/utils" //utility for conditional classNames
 
 
-export default function Leftcard() {
+type Props = {
+  selectedId: number | null
+  onSelect: (id: number) => void
+}
+
+export default function Leftcard({ selectedId, onSelect }: Props) {
   const { data, isLoading, isError } = useBlogs()
   console.log(data)
 
@@ -17,40 +23,44 @@ export default function Leftcard() {
 
   return (
     <div className="space-y-4">
-      {data?.map((blog) => (
-        <Card
-          key={blog.id}
-          className="cursor-pointer hover:shadow-md transition"
-        >
-          <CardContent className="space-y-2">
 
-            {/* TITLE */}
-            <h3 className="font-semibold text-lg">
-              {blog.title}
-            </h3>
+      {data?.map((blog) => {
 
-            {/* DESCRIPTION */}
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              {blog.description}
-            </p>
+        const active = selectedId === blog.id
 
-            {/* CATEGORY */}
-            <div className="flex gap-2 flex-wrap">
-              {blog.category.map((cat) => (
-                <Badge key={cat} variant="secondary">
-                  {cat}
-                </Badge>
-              ))}
-            </div>
+        return (
+          <Card
+            key={blog.id}
+            onClick={() => onSelect(blog.id)}
+            className={cn(
+              "cursor-pointer transition",
+              active
+                ? "border-2 border-blue-500 bg-blue-50 shadow-md"
+                : "hover:shadow"
+            )}
+          >
+            <CardContent className="p-2">
 
-            {/* DATE */}
-            <p className="text-xs text-muted-foreground">
-              {new Date(blog.date).toDateString()}
-            </p>
+              <h3 className={active ? "font-bold" : "font-medium"}>
+                {blog.title}
+              </h3>
 
-          </CardContent>
-        </Card>
-      ))}
+              <p className="text-sm text-muted-foreground line-clamp-2">
+                {blog.description}
+              </p>
+              <div className="flex gap-2 mb-2 mt-3">
+                {blog.category.map(cat => (
+                  <Badge key={cat}>{cat}</Badge>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground">{blog.date}</p>
+
+            </CardContent>
+          </Card>
+        )
+      })}
+
     </div>
   )
 }
+
