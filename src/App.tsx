@@ -4,7 +4,6 @@ import "./index.css"
 import Leftpannel from "./components/left-pannel"
 import { Navigate, Route, Routes } from "react-router"
 
-
 function App() {
   return (
     <>
@@ -19,7 +18,7 @@ function App() {
           </>
         } />
 
-        <Route path="*" element={<div className="text-2xl text-blue-900 mt-30 text-center">Page Not Found</div>} />
+        <Route path="*" element={<div className="text-2xl text-blue-900 mt-30 text-center">This Page will be soon available...</div>} />
       </Routes>
     </>
   )
