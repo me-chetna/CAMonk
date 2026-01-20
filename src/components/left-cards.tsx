@@ -53,7 +53,7 @@ export default function Leftcard({ selectedId, onSelect }: Props) {
                   <Badge key={cat}>{cat}</Badge>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground">{blog.date}</p>
+              <p className="text-xs text-muted-foreground ml-2">{new Date(blog.date).toLocaleDateString()}</p>
 
             </CardContent>
           </Card>

@@ -9,7 +9,7 @@ type Props = {
 export default function Leftpannel({ selectedId, onSelect }: Props) {
   
   return (
-    <div className="w-1/3 border-r p-4 overflow-y-auto">
+    <div className="border-r p-4 overflow-y-auto">
     <h2 className="text-xl font-semibold mb-4">
         Latest Articles
     </h2>
