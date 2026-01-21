@@ -1,7 +1,6 @@
 import Navbar from "./components/navbar"
 import BelowNav from "./components/below-nav"
 import "./index.css"
-import Leftpannel from "./components/left-pannel"
 import { Navigate, Route, Routes } from "react-router"
 import SplashScreen from "./components/splash-loader"
 import { useState, useEffect } from "react"
