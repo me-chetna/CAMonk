@@ -32,7 +32,7 @@ export default function RightPanel({ blogId }: Props) {
   }
 
   return (
-    <div className="p-8 space-y-6 border-white border-2 rounded-2xl m-6">
+    <div className="p-8 space-y-6 border-white border-2 rounded-2xl m-6 h-full overflow-y-auto hide-scrollbar">
 
       {/* COVER IMAGE */}
       <div className="rounded-xl overflow-hidden">

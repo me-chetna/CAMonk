@@ -57,16 +57,17 @@ export default function CreateBlogModal({ open, onClose }: Props) {
   }
 
   return (
-    <Dialog open={open} onOpenChange={onClose}>
+    <Dialog open={open} onOpenChange={onClose}> 
 
       <DialogContent
         className="
-          max-w-2xl 
-          p-8 
+          max-w-2xl  mt-10
+          p-10
           rounded-2xl 
           bg-gradient-to-br from-white via-blue-50 to-white
           border border-blue-200
           shadow-[0_0_30px_rgba(59,130,246,0.25)]
+          h-full overflow-y-auto custom-scrollbar
         "
       >
 

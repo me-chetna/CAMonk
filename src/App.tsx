@@ -29,7 +29,6 @@ if (loading) {
       <Route path="/home" element={
           <>
             <BelowNav />
-            <Leftpannel />
           </>
         } />
 

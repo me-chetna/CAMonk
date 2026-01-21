@@ -6,11 +6,11 @@ function BelowNav() {
     return (
         <>
         <div className="bg-gray-100 mt-15">
-            <div className=" pt-8 text-center text-4xl font-bold text-blue-800">CAMonk Blog</div>
-            <div className="pt-3 text-center text-gray-600 text-l">Stay Tuned for further updates of financial trends, accounting and career growth</div>
-            <hr className="mt-10 text-white"></hr>
+            <div className=" pt-6 text-center text-4xl font-bold text-blue-800">CAMonk Blog</div>
+            <div className="pt-3 text-center text-gray-600 text-l">Stay Tuned for updates of financial trends, accounting and career growth</div>
+            <hr className="mt-8 text-white"></hr>
         </div>
-        <div className="flex flex-row w-full min-h-screen">
+        <div className="flex w-full h-[calc(100vh-64px)]">
             {/* LEFT */}
             <div className="w-[35%] border-r">
                 <LeftPanel

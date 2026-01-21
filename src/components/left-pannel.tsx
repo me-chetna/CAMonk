@@ -9,7 +9,8 @@ type Props = {
 export default function Leftpannel({ selectedId, onSelect }: Props) {
   
   return (
-    <div className="border-r p-4 overflow-y-auto">
+    <div className="h-full overflow-y-auto custom-scrollbar p-4">
+
     <h2 className="text-xl font-semibold mb-4">
         Latest Articles
     </h2>
