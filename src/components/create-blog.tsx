@@ -31,7 +31,7 @@ export default function CreateBlogModal({ open, onClose }: Props) {
 
   const createBlog = useMutation({
     mutationFn: async () => {
-      const res = await fetch("http://localhost:3001/blogs", {
+      const res = await fetch("https://camonk-1.onrender.com/blogs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

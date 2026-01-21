@@ -12,7 +12,7 @@ export default function RightPanel({ blogId }: Props) {
   const { data, isLoading } = useQuery({
     queryKey: ["blog", blogId],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:3001/blogs/${blogId}`) //fetching blogId  from backend server
+      const res = await fetch(`https://camonk-1.onrender.com/blogs/${blogId}`) //fetching blogId  from backend server
       return res.json() //returning data of selected blog using json
     },
     enabled: !!blogId,
