@@ -1,7 +1,7 @@
 //Backend Connection
 
 //Calling backend endpoint/ estabilishing Connection with backend 
-const BASE_URL = "http://localhost:3001"
+const BASE_URL = "https://camonk-1.onrender.com"
 
 //declaring the type for a blog post
 export type Blog = {
